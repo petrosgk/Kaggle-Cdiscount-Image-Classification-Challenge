@@ -1,1 +1,1 @@
-# Cdiscount-Image-Classification-Challenge
+# Kaggle Cdiscount's Image Classification Challenge solution with Keras
