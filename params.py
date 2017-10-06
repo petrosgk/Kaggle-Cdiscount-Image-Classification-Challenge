@@ -1,7 +1,7 @@
 base_dir = 'E:/Documents/Kaggle/Cdiscount'  # Change to your base folder
 
-height = 224
-width = 224
+height = 180
+width = 180
 batch_size = 32
-max_epochs = 20
+max_epochs = 10
 base_model = 'vgg16'
