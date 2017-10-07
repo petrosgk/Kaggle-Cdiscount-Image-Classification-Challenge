@@ -3,6 +3,7 @@ from collections import defaultdict
 
 import pandas as pd
 import numpy as np
+from tqdm import tqdm
 
 from skimage.io import imread, imsave
 from skimage.transform import resize
@@ -58,13 +59,15 @@ print('Train on {} product_ids, validate on {} product_ids'.format(len(product_i
 # Build train and validation samples arrays
 product_ids_pics_train_arr = []
 category_ids_train_arr = []
-for prod in range(len(product_ids_train)):
+print('Creating training data:')
+for prod in tqdm(range(len(product_ids_train))):
     for pic in range(n_pics_train[prod]):
         product_ids_pics_train_arr.append(str(product_ids_train[prod]) + '_' + str(pic))
         category_ids_train_arr.append(category_ids_train[prod])
 product_ids_pics_test_arr = []
 category_ids_test_arr = []
-for prod in range(len(product_ids_test)):
+print('Creating validation data:')
+for prod in tqdm(range(len(product_ids_test))):
     for pic in range(n_pics_test[prod]):
         product_ids_pics_test_arr.append(str(product_ids_test[prod]) + '_' + str(pic))
         category_ids_test_arr.append(category_ids_test[prod])
